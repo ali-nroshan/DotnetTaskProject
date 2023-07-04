@@ -1,0 +1,9 @@
+src/DotnetTaskProject/Project.Domain/obj/
+src/DotnetTaskProject/Project.Application/obj/
+src/DotnetTaskProject/Project.Infrastructure/obj/
+src/DotnetTaskProject/Project.API/obj/
+
+src/DotnetTaskProject/Project.Domain/bin/
+src/DotnetTaskProject/Project.Application/bin/
+src/DotnetTaskProject/Project.Infrastructure/bin/
+src/DotnetTaskProject/Project.API/bin/
