@@ -3,11 +3,6 @@ using MediatR;
 using Project.Application.DTOs.Product;
 using Project.Application.Features.Product.Requests.Queries;
 using Project.Application.Contracts.Persistence;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project.Application.Features.Product.Handlers.Queries
 {
