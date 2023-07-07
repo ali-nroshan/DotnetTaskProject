@@ -23,6 +23,10 @@ namespace Project.Application.Features.Product.Handlers.Commands
 			var product = await _productRepository.GetProductAsync(request.DeleteProductDto.ManufactureEmail, request.DeleteProductDto.ProductDate);
 			if (product == null)
 				throw new NotFoundException();
+
+			if (product.UserId != request.UserId)
+				throw new UnauthorizedException();
+
 			await _productRepository.DeleteProductAsync(product);
 			return Unit.Value;
 		}

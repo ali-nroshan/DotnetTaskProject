@@ -20,15 +20,19 @@ namespace Project.Application.Features.Product.Handlers.Commands
 		}
 		public async Task<int> Handle(CreateProductCommand request, CancellationToken cancellationToken)
 		{
-			var validator = new CreateProductDtoValidator(_userRepository);
+			var validator = new CreateProductDtoValidator();
 			var validationResult = await validator.ValidateAsync(request.CreateProductDto);
 			if (!validationResult.IsValid)
 				throw new BadRequestException();
 
-			if (!await _productRepository.ProductExistAsync(request.CreateProductDto.ManufactureEmail, request.CreateProductDto.ProductDate))
-				throw new NotFoundException();
+			if (!await _userRepository.UserIdExistAsync(request.UserId))
+				throw new UnauthorizedException();
+
+			if (await _productRepository.ProductExistAsync(request.CreateProductDto.ManufactureEmail, request.CreateProductDto.ProductDate))
+				throw new BadRequestException();
 
 			var newProduct = _mapper.Map<Domain.Entities.Product>(request.CreateProductDto);
+			newProduct.UserId = request.UserId;
 			await _productRepository.CreateProductAsync(newProduct);
 			return newProduct.ProductId;
 		}

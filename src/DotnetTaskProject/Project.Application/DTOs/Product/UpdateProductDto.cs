@@ -1,6 +1,6 @@
-namespace Project.Application.DTOs.Product
+﻿namespace Project.Application.DTOs.Product
 {
-	public class UpdateProductDto : IProductDto
+    public class UpdateProductDto : IProductDto
 	{
         public string ProductName { get; set; }
 

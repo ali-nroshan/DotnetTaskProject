@@ -11,7 +11,5 @@
 		public DateTime ProductDate { get; set; }
 
 		public bool IsAvailable { get; set; }
-
-        public int UserId { get; set; }
     }
 }

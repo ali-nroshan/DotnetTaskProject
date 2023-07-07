@@ -26,6 +26,10 @@ namespace Project.Application.Features.Product.Handlers.Commands
 			var product = await _productRepository.GetProductByIdAsync(request.ProductId);
 			if (product == null)
 				throw new NotFoundException();
+
+			if (product.UserId != request.UserId)
+				throw new UnauthorizedException();
+
 			_mapper.Map(request.UpdateProductDto, product);
 			await _productRepository.UpdateProductAsync(product);
 			return Unit.Value;

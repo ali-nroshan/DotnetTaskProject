@@ -1,6 +1,6 @@
-namespace Project.Application.DTOs.Product
+﻿namespace Project.Application.DTOs.Product
 {
-	public class DeleteProductDto
+    public class DeleteProductDto
 	{
 		public string ManufactureEmail { get; set; }
 
