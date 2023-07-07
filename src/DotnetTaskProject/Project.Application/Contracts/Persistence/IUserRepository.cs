@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Project.Application.Contracts.Persistence
+﻿namespace Project.Application.Contracts.Persistence
 {
-	public interface IUserRepository
+    public interface IUserRepository
 	{
-		Task<bool> UserIdExistAsync(int userId);
+		Task<bool> UserIdExistAsync(Guid userId);
+
+		Task<Guid?> CheckUserCredentialsAsync(string username, string passwordHash);
 	}
 }
