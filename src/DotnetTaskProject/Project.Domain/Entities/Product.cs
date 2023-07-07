@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Project.Domain.Entities
 {
-  public class Product
-  {
+	public class Product
+	{
         [Key]
         public int ProductId { get; set; }
 
@@ -28,7 +28,7 @@ namespace Project.Domain.Entities
         public bool IsAvailable { get; set; }
 
         [Required]
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
 
         [Required]
         [ForeignKey("UserId")]
