@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project.Application.Exceptions
 {
-	public class UndefinedException : ApplicationException
+	public class UnauthorizedException : ApplicationException
 	{
 	}
 }

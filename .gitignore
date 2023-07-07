@@ -7,3 +7,5 @@ src/DotnetTaskProject/Project.Domain/bin/
 src/DotnetTaskProject/Project.Application/bin/
 src/DotnetTaskProject/Project.Infrastructure/bin/
 src/DotnetTaskProject/Project.API/bin/
+
+.vscode/
