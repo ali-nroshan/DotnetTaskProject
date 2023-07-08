@@ -54,15 +54,9 @@ namespace Project.Infrastructure.Persistence.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task<bool> ProductExistAsync(int productId)
-        {
-            return await _context.Products.AnyAsync(q => q.ProductId == productId);
-        }
-
         public async Task<Product?> GetProductByIdAsync(int productId)
         {
             return await _context.Products.FindAsync(productId);
         }
-
 	}
 }
