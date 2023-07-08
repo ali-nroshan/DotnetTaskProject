@@ -1,5 +1,6 @@
 using Project.Application;
 using Project.Infrastructure;
+using Project.Infrastructure.Persistence.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.Services.InitialDatabase();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
