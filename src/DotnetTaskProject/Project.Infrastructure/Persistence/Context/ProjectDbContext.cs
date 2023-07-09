@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Project.Domain.Entities;
+using Project.Infrastructure.Persistence.Configurations.Entities;
 
 namespace Project.Infrastructure.Persistence.Context
 {
@@ -9,6 +10,7 @@ namespace Project.Infrastructure.Persistence.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
             base.OnModelCreating(modelBuilder);
         }
 
